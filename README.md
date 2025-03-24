@@ -20,7 +20,7 @@ npm run dev:start
 
 ## Lancer le projet NEXTJS (Frontend)
 ```bash
-cd m1-api
+cd m1-site
 npm run dev
 ```
 
