@@ -77,7 +77,7 @@ export default function Drawer({ bookId, ratings }: DrawerProps) {
                 <div className="fixed inset-0 bg-black/50 z-50 flex justify-end">
                     <div className="bg-white w-full max-w-md p-6 shadow-lg overflow-y-auto">
                         <div className="flex justify-between items-center mb-4">
-                            <h2 className="text-xl font-bold">💬 Commentaires</h2>
+                            <h2 className="text-xl font-bold">Commentaires</h2>
                             <button className="text-sm text-blue-600" onClick={() => setOpen(false)}>
                                 Fermer
                             </button>
@@ -89,7 +89,7 @@ export default function Drawer({ bookId, ratings }: DrawerProps) {
                             <ul className="space-y-3 mb-6">
                                 {ratings.map((r, i) => (
                                     <li key={i} className="border p-3 rounded">
-                                        <p className="text-yellow-600 font-semibold">⭐ {r.stars}/5</p>
+                                        <p className="text-yellow-600 font-semibold">{r.stars}/5</p>
                                         {r.comment && <p className="text-sm italic mt-1">{r.comment}</p>}
                                     </li>
                                 ))}
@@ -97,7 +97,7 @@ export default function Drawer({ bookId, ratings }: DrawerProps) {
                         )}
 
                         <form onSubmit={handleAddRating} className="border-t pt-4">
-                            <h4 className="font-semibold mb-2">➕ Ajouter une note</h4>
+                            <h4 className="font-semibold mb-2">Ajouter une note</h4>
                             <input
                                 type="number"
                                 min="1"
