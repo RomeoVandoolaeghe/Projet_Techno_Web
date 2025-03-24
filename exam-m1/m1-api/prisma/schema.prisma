@@ -8,15 +8,13 @@ datasource db {
 }
 
 model Author {
-  id        Int     @id @default(autoincrement())
-  name      String
-  birthDate DateTime
+  id          Int      @id @default(autoincrement())
+  name        String
+  birthDate   DateTime
   nationality String // Ajoutez cette ligne pour définir le champ nationality
-  biography String?
-  books     Book[]
+  biography   String?
+  books       Book[]
 }
-
-
 
 model Book {
   id            Int      @id @default(autoincrement())
