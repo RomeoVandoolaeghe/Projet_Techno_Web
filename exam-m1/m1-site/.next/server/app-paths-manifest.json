@@ -2,5 +2,6 @@
   "/authors/page": "app/authors/page.js",
   "/authors/[id]/page": "app/authors/[id]/page.js",
   "/books/page": "app/books/page.js",
-  "/books/[id]/page": "app/books/[id]/page.js"
+  "/books/[id]/page": "app/books/[id]/page.js",
+  "/page": "app/page.js"
 }
