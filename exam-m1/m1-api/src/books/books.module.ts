@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
 import { BooksService } from './books.service';
-import { DatabaseModule } from '../modules/database/database.module';  // Assure-toi que PrismaService est exporté depuis ce module
+import { BooksController } from './books.controller';
+import { BooksRepository } from './books.repository';
+import { PrismaService } from '../modules/database/prisma.service';
 
 @Module({
-  imports: [DatabaseModule],  // Importer DatabaseModule où PrismaService est exporté
-  providers: [BooksService],
+  controllers: [BooksController],
+  providers: [BooksService, PrismaService, BooksRepository],
 })
 export class BooksModule {}

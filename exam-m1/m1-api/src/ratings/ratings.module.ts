@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
 import { RatingsService } from './ratings.service';
-import { DatabaseModule } from '../modules/database/database.module';  // Assure-toi que PrismaService est exporté depuis ce module
+import { RatingsController } from './ratings.controller'; // Importe RatingsController
+import { PrismaService } from '../modules/database/prisma.service';
+import { RatingsRepository } from './ratings.repository'; // Importe RatingsRepository
 
 @Module({
-  imports: [DatabaseModule],  // Importer DatabaseModule où PrismaService est exporté
-  providers: [RatingsService],
+  controllers: [RatingsController],
+  providers: [RatingsService, RatingsRepository, PrismaService],
 })
 export class RatingsModule {}

@@ -33,3 +33,4 @@ model Rating {
   bookId  Int
   book    Book    @relation(fields: [bookId], references: [id])
 }
+
