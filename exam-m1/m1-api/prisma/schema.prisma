@@ -13,7 +13,7 @@ model Author {
   birthDate   DateTime
   nationality String // Ajoutez cette ligne pour définir le champ nationality
   biography   String?
-  books       Book[]
+  books       Book[]   
 }
 
 model Book {
@@ -22,8 +22,8 @@ model Book {
   publishedYear Int
   price         Float
   authorId      Int
-  author        Author   @relation(fields: [authorId], references: [id])
-  ratings       Rating[] // Ajout de la relation inverse
+  author        Author   @relation(fields: [authorId], references: [id], onDelete: Cascade)  // Relation avec suppression en cascade
+  ratings       Rating[] // Relation avec Rating (avec cascade dans le schéma)
 }
 
 model Rating {
@@ -31,6 +31,7 @@ model Rating {
   stars   Int
   comment String?
   bookId  Int
-  book    Book    @relation(fields: [bookId], references: [id])
+  book    Book    @relation(fields: [bookId], references: [id], onDelete: Cascade)  // Supprimer les ratings lorsque le livre est supprimé
 }
+
 
