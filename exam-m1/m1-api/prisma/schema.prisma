@@ -11,7 +11,7 @@ model Author {
   id          Int      @id @default(autoincrement())
   name        String
   birthDate   DateTime
-  nationality String // Ajoutez cette ligne pour définir le champ nationality
+  nationality String 
   biography   String?
   books       Book[]   
 }
@@ -22,8 +22,8 @@ model Book {
   publishedYear Int
   price         Float
   authorId      Int
-  author        Author   @relation(fields: [authorId], references: [id], onDelete: Cascade)  // Relation avec suppression en cascade
-  ratings       Rating[] // Relation avec Rating (avec cascade dans le schéma)
+  author        Author   @relation(fields: [authorId], references: [id], onDelete: Cascade)  
+  ratings       Rating[] 
 }
 
 model Rating {
@@ -31,7 +31,7 @@ model Rating {
   stars   Int
   comment String?
   bookId  Int
-  book    Book    @relation(fields: [bookId], references: [id], onDelete: Cascade)  // Supprimer les ratings lorsque le livre est supprimé
+  book    Book    @relation(fields: [bookId], references: [id], onDelete: Cascade) 
 }
 
 

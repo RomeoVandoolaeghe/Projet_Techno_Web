@@ -38,17 +38,17 @@ export default async function AuthorDetailPage({ params }: { params: { id: strin
 
     return (
         <div className="max-w-2xl mx-auto bg-white p-6 rounded shadow">
-            <h1 className="text-2xl font-bold mb-4">👤 {author.name}</h1>
+            <h1 className="text-2xl font-bold mb-4">{author.name}</h1>
 
             <p className="text-gray-700 mb-1">Nationalité : {author.nationality}</p>
             <p className="text-gray-700 mb-1">Date de naissance : {new Date(author.birthDate).toLocaleDateString()}</p>
             {author.biography && <p className="text-gray-700 mb-4">{author.biography}</p>}
 
             <p className="text-yellow-600 font-medium mb-4">
-                Livres écrits : {author.books.length} – Note moyenne : {avg.toFixed(1)} ⭐
+                Livres écrits : {author.books.length} – Note moyenne : {avg.toFixed(1)}
             </p>
 
-            <h2 className="text-lg font-semibold mb-2">📚 Livres</h2>
+            <h2 className="text-lg font-semibold mb-2">Livres</h2>
             <ul className="mb-6 space-y-2">
                 {author.books.length === 0 ? (
                     <p className="text-sm text-gray-500">Aucun livre enregistré.</p>
@@ -57,7 +57,7 @@ export default async function AuthorDetailPage({ params }: { params: { id: strin
                         <li key={book.id} className="border rounded p-3">
                             <p className="font-medium">{book.title}</p>
                             <p className="text-sm text-gray-600">
-                                ⭐ Moyenne :{' '}
+                                Moyenne :{' '}
                                 {book.ratings.length > 0
                                     ? (
                                         book.ratings.reduce((sum, r) => sum + r.stars, 0) /
@@ -70,7 +70,7 @@ export default async function AuthorDetailPage({ params }: { params: { id: strin
                 )}
             </ul>
 
-            {/* Composant client (drawer) */}
+
             <AuthorDrawer authorId={author.id} />
         </div>
     );

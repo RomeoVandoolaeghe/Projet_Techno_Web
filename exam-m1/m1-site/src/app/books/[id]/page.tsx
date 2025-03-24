@@ -43,9 +43,8 @@ export default async function BookDetailPage({ params }: { params: { id: string 
       <p className="text-gray-700 mb-1">Auteur : <span className="font-medium">{book.author.name}</span></p>
       <p className="text-gray-700 mb-1">Année : {book.publishedYear}</p>
       <p className="text-gray-700 mb-1">Prix : {book.price.toFixed(2)} €</p>
-      <p className="text-yellow-600 font-medium mb-4">Note moyenne : {avg.toFixed(1)} ⭐</p>
+      <p className="text-yellow-600 font-medium mb-4">Note moyenne : {avg.toFixed(1)}</p>
 
-      {/* Composant Drawer + Supprimer */}
       <Drawer bookId={book.id} ratings={book.ratings} />
     </div>
   );

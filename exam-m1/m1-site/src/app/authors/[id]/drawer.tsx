@@ -17,7 +17,7 @@ export default function AuthorDrawer({ authorId }: Props) {
                 method: 'DELETE',
             });
             if (!res.ok) throw new Error('Erreur suppression');
-            router.push('/authors'); // Redirige vers la liste des auteurs
+            router.push('/authors');
         } catch {
             alert('Erreur lors de la suppression');
         }
@@ -29,7 +29,7 @@ export default function AuthorDrawer({ authorId }: Props) {
                 onClick={() => setConfirmDelete(true)}
                 className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
             >
-                Supprimer l’auteur 🗑️
+                Supprimer l’auteur
             </button>
 
             {/* Modal de confirmation */}
